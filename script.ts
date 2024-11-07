@@ -2,6 +2,7 @@
 interface ResumeData {
     name: string;
     contact: string;
+    cnic:string;
     address: string;
     email: string;
     facebook: string;
@@ -16,6 +17,7 @@ interface ResumeData {
   const resumeData: ResumeData = {
     name: "",
     contact: "",
+    cnic:"",
     address: "",
     email: "",
     facebook: "",
@@ -34,6 +36,9 @@ interface ResumeData {
     ).value;
     resumeData.contact = (
       document.getElementById("contactField") as HTMLInputElement
+    ).value;
+    resumeData.cnic = (
+      document.getElementById("cnicField") as HTMLInputElement
     ).value;
     resumeData.address = (
       document.getElementById("addressField") as HTMLTextAreaElement
@@ -93,6 +98,8 @@ interface ResumeData {
       resumeData.name;
     (document.getElementById("contactT") as HTMLElement).innerText =
       resumeData.contact;
+    (document.getElementById("cnicT") as HTMLElement).innerText =
+      resumeData.cnic;  
     (document.getElementById("addressT") as HTMLElement).innerText =
       resumeData.address;
     (document.getElementById("emailT") as HTMLElement).innerText =
