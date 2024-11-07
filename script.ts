@@ -1,8 +1,8 @@
 // Define interface for resume data
 interface ResumeData {
     name: string;
-    contact: string;
-    cnic:string;
+    contact: number;
+    cnic:number;
     address: string;
     email: string;
     facebook: string;
@@ -16,8 +16,8 @@ interface ResumeData {
   // Initialize data object
   const resumeData: ResumeData = {
     name: "",
-    contact: "",
-    cnic:"",
+    contact: 0,
+    cnic: 0,
     address: "",
     email: "",
     facebook: "",
@@ -34,12 +34,12 @@ interface ResumeData {
     resumeData.name = (
       document.getElementById("nameField") as HTMLInputElement
     ).value;
-    resumeData.contact = (
-      document.getElementById("contactField") as HTMLInputElement
-    ).value;
-    resumeData.cnic = (
-      document.getElementById("cnicField") as HTMLInputElement
-    ).value;
+    resumeData.contact = Number(
+      (document.getElementById("contactField") as HTMLInputElement).value
+    );
+    resumeData.cnic = Number(
+      (document.getElementById("cnicField") as HTMLInputElement).value
+    );
     resumeData.address = (
       document.getElementById("addressField") as HTMLTextAreaElement
     ).value;
@@ -97,9 +97,9 @@ interface ResumeData {
     (document.getElementById("nameT2") as HTMLElement).innerText =
       resumeData.name;
     (document.getElementById("contactT") as HTMLElement).innerText =
-      resumeData.contact;
+      String(resumeData.contact);
     (document.getElementById("cnicT") as HTMLElement).innerText =
-      resumeData.cnic;  
+      String(resumeData.cnic);    
     (document.getElementById("addressT") as HTMLElement).innerText =
       resumeData.address;
     (document.getElementById("emailT") as HTMLElement).innerText =
@@ -148,7 +148,9 @@ interface ResumeData {
     (document.getElementById("nameField") as HTMLInputElement).value =
       resumeData.name;
     (document.getElementById("contactField") as HTMLInputElement).value =
-      resumeData.contact;
+      String(resumeData.contact);
+    (document.getElementById("cnicField") as HTMLInputElement).value =
+      String(resumeData.cnic); 
     (document.getElementById("addressField") as HTMLTextAreaElement).value =
       resumeData.address;
     (document.getElementById("emailField") as HTMLInputElement).value =
