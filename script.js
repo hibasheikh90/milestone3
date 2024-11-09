@@ -1,8 +1,8 @@
 // Initialize data object
 var resumeData = {
     name: "",
-    contact: "",
-    cnic: "",
+    contact: 0,
+    cnic: 0,
     address: "",
     email: "",
     facebook: "",
@@ -16,8 +16,8 @@ var resumeData = {
 function generateResume() {
     //  data from form fields
     resumeData.name = document.getElementById("nameField").value;
-    resumeData.contact = document.getElementById("contactField").value;
-    resumeData.cnic = document.getElementById("cnicField").value;
+    resumeData.contact = Number(document.getElementById("contactField").value);
+    resumeData.cnic = Number(document.getElementById("cnicField").value);
     resumeData.address = document.getElementById("addressField").value;
     resumeData.email = document.getElementById("emailField").value;
     resumeData.facebook = document.getElementById("fbField").value;
@@ -51,9 +51,9 @@ function populateResumeTemplate() {
     document.getElementById("nameT2").innerText =
         resumeData.name;
     document.getElementById("contactT").innerText =
-        resumeData.contact;
+        String(resumeData.contact);
     document.getElementById("cnicT").innerText =
-        resumeData.cnic;
+        String(resumeData.cnic);
     document.getElementById("addressT").innerText =
         resumeData.address;
     document.getElementById("emailT").innerText =
@@ -95,7 +95,9 @@ function editCV() {
     document.getElementById("nameField").value =
         resumeData.name;
     document.getElementById("contactField").value =
-        resumeData.contact;
+        String(resumeData.contact);
+    document.getElementById("cnicField").value =
+        String(resumeData.cnic);
     document.getElementById("addressField").value =
         resumeData.address;
     document.getElementById("emailField").value =
